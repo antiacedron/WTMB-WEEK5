@@ -35,7 +35,7 @@ app.get('/', async(req, res, next) => {
 
   app.get("/person/name/:name", async (req, res) => {
     const user = await Personservice.findByName(req.params.name)
-    res.render('data', { data: user })
+    res.send(user) 
   }) 
   
   app.post('/person', async (req, res, next) => {
