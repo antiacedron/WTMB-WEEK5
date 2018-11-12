@@ -28,7 +28,7 @@ async function del(bookId) {
 }
 
 async function findByID(bookId) {
-   return BookModel.findOne({_id: bookId}) 
+   return BookModel.findOne({_id: bookId}).populate("readers") 
 }
 
 async function findByTitle(bookTitle) { 
